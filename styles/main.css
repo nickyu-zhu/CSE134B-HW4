@@ -1,0 +1,171 @@
+button{
+    color: red;
+}
+
+section img{
+    height: 2.5rem;
+    width: 2.5rem;
+    margin: 0 2rem 0 0;
+}
+
+#name{
+    font-size: 3.5rem;
+    margin: 15rem 0 2rem 0;
+    color: white;
+}
+
+section div{
+    font-size: 1.5rem;
+    margin: 0 0 2rem 0;     
+    color: white;
+}
+
+section img:hover{
+    height: 4rem;
+    width: 4rem;
+}
+
+#img1{
+    width: 20rem;
+    height: 18rem;
+    margin: 15rem 5% 0px 0px;
+}
+
+#head{
+    font-size: 1.5rem;
+    color: black;
+    margin: 4vh 1.5vw 1vh 0%;
+    font-size: 1.5rem;
+}
+
+.course{
+    margin: 7px;
+    background-color: lightseagreen;
+}
+
+.container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.container-s{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    font-size: 0.75em;
+}
+
+@media(max-width: 1000px){
+    .container{
+        flex-direction: column;
+        font-size: 0.75rem;
+    }
+    #img1{
+        width: 10rem;
+        height: 18rem;
+        margin: 15rem 5% 0px 0px;
+    }
+
+    section img{
+        height: 2.5rem;
+        width: 1.5rem;
+        margin: 0 2rem 0 0;
+    }
+
+    section img:hover{
+        height: 3rem;
+        width: 3rem;
+    }
+
+    #name{
+        font-size: 2rem;
+        margin: 15rem 0 2rem 0;
+        color: white;
+    }
+    
+    section div{
+        font-size: 1rem;
+        margin: 0 0 2rem 0;     
+        color: white;
+    }
+
+    .container-s{
+        font-size: 0.5em;
+    }
+}
+
+.flex-container-p{
+    display: flex;
+    background-image: url("/images/background.jfif");
+    background-size: cover;
+    filter: contrast(1.75);
+}
+
+.flex-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    flex-basis: 50%;
+}
+
+.flex-container2{
+    display: flex;
+    flex-flow: column wrap;
+    align-content: flex-end;
+}
+
+main {
+    font-size: 1.5em;
+}
+
+h3{
+    display: block;
+    margin: 4vh 1.5vw 1vh 0%;
+    font-size: 1.5rem;
+}
+
+main > div {
+    font-family: "CustomFont", Arial, sans-serif;
+    font-size: 1rem;
+    margin: 1rem 0 1rem 0;
+}
+
+body > img{
+    margin: 2rem 1rem 0 2rem;
+    border-radius: 50%;
+    transform: rotate(0.2turn);
+}
+
+@keyframes animation{
+    0% {
+        width: 10rem;
+        height: 10rem;
+        background-color: yellow;
+    }
+    100% {
+        width: 20rem;
+        height: 20rem;
+        background-color: green;
+    }
+}
+
+.circle{
+    animation-name: animation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    border-radius: 50%;
+}
+
+.rectangle{
+    transition: background-color 1.5s ease-in-out;
+    background-color: red;
+    width: 20rem;
+    height: 20rem;
+}
+
+.rectangle:hover{
+    background-color: yellowgreen;
+}
+
+

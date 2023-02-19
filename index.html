@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ningyu Zhu's Personal Website</title>
+	<link rel="stylesheet" href="styles/main.css">
+	<script type="module">
+		const canvas = document.getElementById('canvas');
+		const ctx = canvas.getContext('2d');
+		ctx.fillStyle = 'red';
+		ctx.fillRect(10, 10, 150, 100);
+	</script>
+</head>
+<body>
+	<section class="flex-container-p">
+		<section class="flex-container">
+			<img src="images/Ningyu.jpg" alt="Ningyu Zhu Bio image" id="img1">
+		</section>
+		<section class="flex-container2">
+			<h1 id="name">Ningyu Zhu</h1>
+			<div>
+				Master Student
+				<br>
+				Computer Science & Engineering Department
+				<br>
+				Jacobs School of Engineering
+				<br>
+				University of California, San Diego
+			</div>
+			<section>
+				<a href="https://github.com/nickyu-zhu" target="_blank">
+					<img src="images/github.png" alt="Github">
+				</a>
+				<a href="https://www.linkedin.com/in/ningyu-zhu-567530245/" target="_blank">
+					<img src="images/linkedin.png" alt="Github">
+				</a>
+			</section>
+		</section>
+	</section>
+	
+	<main>
+		<h3>My Skills</h3>
+		<div class="container-s">
+			<div><em>Programming Language:</em> C/C++, GLSL, Python, Java, JavaScript, HTML5, CSS3</div>
+			<div><em>Frameworks/Libraries:</em> OpenGL(WebGL), Springboot, Django</div>
+		</div>
+		
+	</main>
+	<div id="head">Notable courses</div>
+	<div class="container">
+		<div class="course">Computer Graphics</div>
+		<div class="course">Computer Graphics II (Rendering)</div>
+		<div class="course">Physical Simulations</div>
+		<div class="course">Advanced Image Synthesis</div>
+		<div class="course">Algorithm Design & Analysis</div>
+		<div class="course">Data Mining & Analytics</div>
+		<div class="course">Web Client Languages</div>
+	</div>
+
+	<img src="/images/stanford Bunny.jfif" alt="stanford Bunny">
+	<div class="circle">animation</div>
+	<div class="rectangle">transition</div>
+	<div style="color:red;">The content down below will be the lab area, which contain the rest of unused tags in the Homework2 requirement</div>
+	<p>Salamanders are a group of amphibians with a lizard-like appearance, 
+		including short legs and a tail in both larval and adult forms.
+	</p>
+	<aside>
+		<p>The Rough-skinned Newt defends itself with a deadly neurotoxin.</p>
+	</aside>
+	<p>Several species of salamander inhabit the temperate rainforest of the Pacific Northwest, including the Ensatina, the Northwestern Salamander and the Rough-skinned Newt. 
+		Most salamanders are nocturnal, and hunt for insects, worms and other small creatures.
+	</p>
+	<pre style="text-align: left;">
+		<code>
+#include "iostream"
+using namespace std;	
+int main () {
+	int a, b;
+	cin >> a >> b;
+	cout &lt;&lt; a + b &lt;&lt; endl;
+	return 0;
+}
+		</code>
+	</pre>
+
+	<picture>
+		<source srcset="/images/bear.png" media="(min-width: 600px)">
+		<img src="images/bg_homepage.jpg" alt="background">
+	</picture>
+
+	<iframe src="About.html"></iframe>
+	<video controls width="600">
+		<source src="videos/videoplayback.mp4" type="video/mp4">
+	</video>
+	<audio controls>
+		<source src="Audio/bgm.mp3" type="audio/mp3">
+	</audio>
+	<ul>
+		<li>Apple</li>
+		<li>Strawberry</li>
+	</ul>
+	<ol>
+		<li>L1</li>
+		<li>L2</li>
+	</ol>
+	<table id="mytable">
+		<caption>My Table</caption>
+		<thead>
+			<tr>
+				<th colspan="2">The table header</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>The table body</td>
+				<td>with two columns</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<template id="mytemplate">
+		<tr>
+			<td></td>
+			<td></td>
+		</tr>
+	</template>
+
+	<form action="About.html">
+		<label for="name">Enter your name:</label>
+		<input type="text" name="name" id="name" required>
+
+		<label for="email">Enter your email:</label>
+		<input type="email" name="email" id="email" required>
+
+		<label for="choice">Make your game choice</label>
+		<input list="gamename" name="choice" id="choice">
+		<datalist id="gamename">
+			<option value="Overwatch"></option>
+			<option value="Valorant"></option>
+			<option value="Call of Duty"></option>
+			<option value="Battlefield"></option>
+		</datalist>
+
+		<select name="selection">
+			<optgroup label="Group1">
+				<option>Option 1.1</option>
+				<option>Option 1.2</option>
+				<option>Option 1.3</option>
+			</optgroup>
+			<optgroup label="Group2">
+				<option>Option 2.1</option>
+				<option>Option 2.2</option>
+				<option>Option 2.3</option>
+			</optgroup>
+			<optgroup label="Group3">
+				<option>Option 3.1</option>
+				<option>Option 3.2</option>
+				<option>Option 3.3</option>
+			</optgroup>
+		</select>
+		<br>
+
+		<label for="review">Tell us your review</label>
+		<textarea name="review" id="review" cols="30" rows="10"></textarea>
+
+		<fieldset>
+			<legend>Choose your favorite food</legend>
+			
+			<input type="radio" id="Fish" name="Fish">
+			<label for="Fish">Fish</label> <br>
+			<input type="radio" id="Meat" name="Meat">
+			<label for="Meat">Meat</label> <br>
+			<input type="radio" id="Beef" name="Beef">
+			<label for="Beef">Beef</label>
+		</fieldset>
+
+		<button type="submit">submit</button>
+	</form>
+
+	<details>
+		<summary>DFS</summary>
+		Depth First Search
+	</details>
+
+	<table>
+		<caption>Superheros and sidekicks</caption>
+		<colgroup>
+			<col span="5">
+		</colgroup>
+		<tr>
+			<td>Heros</td>
+			<th>Batman</th>
+			<th>Robin</th>
+			<th>The Flash</th>
+			<th>Kid Flash</th>
+		</tr>
+		<tr>
+			<th>Skill</th>
+			<td>Smarts</td>
+			<td>Dex, acrobat</td>
+			<td>Super speed</td>
+			<td>Super speed</td>
+		</tr>
+	</table>
+
+	<figure>
+		<img src="images/triton.jpg" alt="triton" width="600" height="600">
+		<figcaption style="text-align: center;">UCSD Triton</figcaption>
+	</figure>
+
+	<canvas id="canvas"></canvas>
+
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="blue" />
+	 </svg>
+	<footer>
+		&copy;2023 Ningyu Zhu
+	</footer>
+</body>
+</html>
