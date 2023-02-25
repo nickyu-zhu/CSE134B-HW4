@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ningyu Zhu's Personal Website</title>
+	<link rel="stylesheet" href="styles/main.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+	<script type="module">
+		const canvas = document.getElementById('canvas');
+		const ctx = canvas.getContext('2d');
+		ctx.fillStyle = 'red';
+		ctx.fillRect(10, 10, 150, 100);
+	</script>
+</head>
+<body>
+	<script>
+		$(document).ready(function() {
+    		AOS.init();
+  		});
+	</script>
+	<section class="flex-container-p">
+		<section class="flex-container">
+			<img src="images/Ningyu.jpg" alt="Ningyu Zhu Bio image" id="img1">
+		</section>
+		<section class="flex-container2">
+			<h1 id="name">Ningyu Zhu</h1>
+			<div>
+				Master Student
+				<br>
+				Computer Science & Engineering Department
+				<br>
+				Jacobs School of Engineering
+				<br>
+				University of California, San Diego
+			</div>
+			<section>
+				<a href="https://github.com/nickyu-zhu" target="_blank">
+					<img src="images/github.png" alt="Github">
+				</a>
+				<a href="https://www.linkedin.com/in/ningyu-zhu-567530245/" target="_blank">
+					<img src="images/linkedin.png" alt="Github">
+				</a>
+			</section>
+		</section>
+	</section>
+	
+	<main data-aos="fade-up" data-aos-delay="600">
+		<h3>My Skills</h3>
+		<div class="container-s">
+			<div><em>Programming Language:</em> C/C++, GLSL, Python, Java, JavaScript, HTML5, CSS3</div>
+			<div><em>Frameworks/Libraries:</em> OpenGL(WebGL), Springboot, Django</div>
+		</div>
+	</main>
+	<div id="head">Notable courses</div>
+	<div class="container" data-aos="fade-up">
+		<div class="course">Computer Graphics</div>
+		<div class="course">Computer Graphics II (Rendering)</div>
+		<div class="course">Physical Simulations</div>
+		<div class="course">Advanced Image Synthesis</div>
+		<div class="course">Algorithm Design & Analysis</div>
+		<div class="course">Data Mining & Analytics</div>
+		<div class="course">Web Client Languages</div>
+	</div>
+
+	<img src="/images/stanford Bunny.jfif" alt="stanford Bunny" data-aos="fade-up" data-aos-delay="200">
+	<div class="circle" data-aos="fade-up" data-aos-delay="400">animation</div>
+	<div class="rectangle" data-aos="fade-up" data-aos-delay="600">transition</div>
+	<footer>
+		&copy;2023 Ningyu Zhu
+	</footer>
+</body>
+</html>

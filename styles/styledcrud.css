@@ -1,0 +1,41 @@
+body{
+    background-color: lightblue;
+}
+
+h1{
+    text-align: center;
+}
+
+body:nth-child(2){
+    text-align: center;
+}
+
+#game-list:nth-child(n){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#game-list:nth-child(n) p{
+    text-align: justify;
+    width: 50ch;
+
+}
+
+#game-list:nth-child(n) button{
+    margin: 0 30px 0 0;
+}
+
+#game-list:nth-child(n) button:hover{
+    width: 80px;
+    height: 23px;
+    background-color: red;
+}
+
+#dialog *{
+    margin: 10px;
+}
+
+#dialog button{
+    margin: 0 30px 0 0;
+}

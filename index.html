@@ -4,78 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HW4</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.0/purify.min.js"></script>
+    <title>Root page</title>
 </head>
 <body>
-    <h1>Part 1</h1>
-    <button id="Alert">Alert</button>
-    <button id="Confirm">Confirm</button>
-    <button id="Prompt">Prompt</button>
-    <button id="Safer Prompt">Safer Prompt</button>
+    <a href="crud.html" style="font-size: 35px; margin: 25px;">crud</a>
     <br>
-    <output id="output"></output>
-
-    <hr><br>
-
-    <h1>Part 2</h1>
-    <button id="Alert_custom">Alert_custom</button>
-    <button id="Confirm_custom">Confirm_custom</button>
-    <button id="Prompt_custom">Prompt_custom</button>
-    <button id="Safer Prompt_custom">Safer Prompt_custom</button>
+    <a href="styledcrud.html" style="font-size: 35px; margin: 25px;">styledcrud</a>
     <br>
-    <dialog id="dialog"></dialog>
-    <output id="output_custom"></output>
-
-    <script type="module">
-        import { function_object, display } from './js/customdialog.js';
-
-        const Alert_button = document.getElementById("Alert");
-        Alert_button.addEventListener("click", function(){
-            alert("alert button is clicked");
-        });
-
-        const Confirm_button = document.getElementById("Confirm");
-        Confirm_button.addEventListener("click", function(){
-            let confirm_value = confirm("confirm button is clicked");
-            document.getElementById("output").innerHTML = 
-            `The value returned by the confirm method is : ${confirm_value}`;
-        });
-
-        const Prompt_button = document.getElementById("Prompt");
-        Prompt_button.addEventListener("click", function(){
-            let prompt_string = prompt("prompt button is clicked, enter your string");
-            if(prompt_string === "") prompt_string = "User didn't enter anything";
-            document.getElementById("output").innerHTML = `${display(prompt_string)}`;
-        });
-
-        const Safer_prompt_button = document.getElementById("Safer Prompt");
-        Safer_prompt_button.addEventListener("click", function(){
-            let prompt_string = prompt("safer prompt button is clicked, enter your string");
-            if(prompt_string === "") prompt_string = "User didn't enter anything";
-            prompt_string = DOMPurify.sanitize(prompt_string);
-            document.getElementById("output").innerHTML = `${display(prompt_string)}`;
-        });
-
-        const Alert_custom = document.getElementById("Alert_custom");
-        Alert_custom.addEventListener("click", function(){
-            function_object.alertDialog();
-        });
-
-        const Confirm_custom = document.getElementById("Confirm_custom");
-        Confirm_custom.addEventListener("click", function(){
-            function_object.confirmDialog();
-        });
-        
-        const Prompt_custom = document.getElementById("Prompt_custom");
-        Prompt_custom.addEventListener("click", function(){
-            function_object.promptDialog();
-        });
-
-        const Safer_prompt_custom = document.getElementById("Safer Prompt_custom");
-        Safer_prompt_custom.addEventListener("click", function(){
-            function_object.saferpromptDialog();
-        });
-    </script>
+    <a href="Home.html" style="font-size: 35px; margin: 25px;">Personal Website Home</a>
+    <br>
+    <a href="nativedialogs.html" style="font-size: 35px; margin: 25px;">nativedialogs</a>
 </body>
 </html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>styledcrud</title>
+    <link rel="stylesheet" href="./styles/styledcrud.css">
+    <script type="text/javascript" src="./js/blog.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.0/purify.min.js"></script>
+</head>
+<body>
+    <h1>Big List of Games</h1>
+    <button id="game-btn">&#10133; Add Game</button>
+    <hr>
+
+    <dialog id="dialog">
+        <div>Now enter the game information</div>
+        <form id="game-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required/>
+            <br>
+            <label for="year">Year:</label>
+            <input type="text" id="year" required/>
+            <br>
+            <label for="summary">summary</label>
+            <textarea name="summary" id="summary" cols="30" rows="10" required></textarea>
+            <br>
+            <button id="submit-btn">&#10004;Submit</button>
+            <button id="cancel-btn">&#10060;Cancel</button>
+        </form>
+    </dialog>
+
+    <div id="game-list">
+
+    </div>
+</body>
+</html>
