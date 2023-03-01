@@ -56,12 +56,12 @@ function submit(event)
     }
     
 
-    if(event.target.innerHTML === "Submit")
+    if(event.target.innerHTML.includes("Submit"))
     {
         gameList.push(gameData);
         add_game(gameList[gameList.length - 1]);
         localStorage.setItem("gameList", JSON.stringify(gameList));
-    } else if(event.target.innerHTML === "Save"){
+    } else if(event.target.innerHTML.includes("Save")){
         updateGame(gameData, prevGameIdx);
     }
     dialog.open = false;
@@ -117,7 +117,7 @@ function edit_game(event)
     dialog.open = true;
 
     let saveBtn = document.getElementById("submit-btn");
-    saveBtn.innerHTML = "Save";
+    saveBtn.innerHTML = "&#10004;Save";
     let gameName = event.target.parentNode.id;
     let gameList = localStorage.getItem("gameList");
     gameList = JSON.parse(gameList);
