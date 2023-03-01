@@ -1,11 +1,16 @@
-window.addEventListener("click", buttondealer);
-window.addEventListener("DOMContentLoaded", refresh_render);
-
 function buttondealer(event){
     event.preventDefault();
     if(event.target.id === "game-btn")
     {
-        dialog_show();
+        let dialog = document.getElementById("dialog");
+        let name = document.getElementById("name");
+        let year = document.getElementById("year");
+        let summary = document.getElementById("summary");
+
+        name.value = "";
+        year.value = "";
+        summary.value = "";
+        dialog.open = true;
     }
     else if(event.target.id === "submit-btn")
     {
@@ -16,72 +21,50 @@ function buttondealer(event){
         let dialog = document.getElementById("dialog");
         dialog.open = false;
     }
-    else if(event.target.id.toString().substring(0, 4) === "edit")
+    else if(event.target.id.toString().charAt(0) === "e")
     {
         edit_game(event);
     }
-    else if(event.target.id.toString().substring(0, 6) === "delete")
+    else if(event.target.id.toString().charAt(0) === "d")
     {
         delete_game(event);
     }
 }
 
-function dialog_show()
-{
-    let dialog = document.getElementById("dialog");
-    let name = document.getElementById("name");
-    let year = document.getElementById("year");
-    let summary = document.getElementById("summary");
-    let submitBtn = document.getElementById("submit-btn");
-    let cancelBtn = document.getElementById("cancel-btn");
-
-    
-    name.value = "";
-    year.value = "";
-    summary.value = "";
-    dialog.open = true;
-}
-
 function submit(event)
 {
-    let form = document.getElementById("game-form");
     let gameName = document.getElementById("name");
     let gameYear = document.getElementById("year");
     let gameSummary = document.getElementById("summary");
 
-    if(form.checkValidity())
-    {
-        let dialog = document.getElementById("dialog");
+    let dialog = document.getElementById("dialog");
 
-        gameName = filter(gameName.value);
-        gameYear = filter(gameYear.value);
-        gameSummary = filter(gameSummary.value);
-        let gameData = {
-            id: `${gameName}`,
-            name: `${gameName}`,
-            Year: `${gameYear}`,
-            summary: `${gameSummary}`,
-        };
+    gameName = filter(gameName.value);
+    gameYear = filter(gameYear.value);
+    gameSummary = filter(gameSummary.value);
+    let gameData = {
+        id: `${gameName}`,
+        name: `${gameName}`,
+        Year: `${gameYear}`,
+        summary: `${gameSummary}`,
+    };
 
-        let gameList = localStorage.getItem("gameList");
-        gameList = JSON.parse(gameList);
-        if(gameList === null){
-            gameList = [];
-        }
+    let gameList = localStorage.getItem("gameList");
+    gameList = JSON.parse(gameList);
+    if(gameList === null){
+        gameList = [];
+    }
     
 
-        if(event.target.innerHTML === "Submit")
-        {
-            gameList.push(gameData);
-            add_game(gameList[gameList.length - 1]);
-            localStorage.setItem("gameList", JSON.stringify(gameList));
-        } else if(event.target.innerHTML === "Save"){
-            updateGame(gameData, prevGameIdx);
-        }
-        dialog.open = false;
+    if(event.target.innerHTML === "Submit")
+    {
+        gameList.push(gameData);
+        add_game(gameList[gameList.length - 1]);
+        localStorage.setItem("gameList", JSON.stringify(gameList));
+    } else if(event.target.innerHTML === "Save"){
+        updateGame(gameData, prevGameIdx);
     }
-    else
-        form.reportValidity();
+    dialog.open = false;
 
 }
 
@@ -118,22 +101,35 @@ function add_game(gameData)
     
 }
 
-let prevGameIdx;
+let prevGameIdx = -1;
 function edit_game(event)
 {
     event.preventDefault();
-    dialog_show();
+    let dialog = document.getElementById("dialog");
+    let name = document.getElementById("name");
+    let year = document.getElementById("year");
+    let summary = document.getElementById("summary");
+
+    
+    name.value = "";
+    year.value = "";
+    summary.value = "";
+    dialog.open = true;
 
     let saveBtn = document.getElementById("submit-btn");
     saveBtn.innerHTML = "Save";
     let gameName = event.target.parentNode.id;
     let gameList = localStorage.getItem("gameList");
     gameList = JSON.parse(gameList);
-    let gameYear = gameList.find((game) => game.id === gameName);
-    gameYear = gameYear.Year;
-    let gameSummary = gameList.find((game) => game.id === gameName);
-    gameSummary = gameSummary.summary;
-    prevGameIdx = gameList.map((game) => game.id).indexOf(event.target.parentNode.id);
+    let gameYear, gameSummary, i;
+    for(i = 0; i < gameList.length; i++)
+    {
+        if(gameList[i].id === gameName)
+            break;
+    }
+    gameYear = gameList[i].Year;
+    gameSummary = gameList[i].summary;
+    prevGameIdx = i;
 
     document.getElementById("name").value = gameName;
     document.getElementById("year").value = gameYear;
@@ -179,28 +175,27 @@ function delete_game(event)
 
     let storageGame = localStorage.getItem("gameList");
     storageGame = JSON.parse(storageGame);
-    let gameIndex = storageGame.map((game) => game.id).indexOf(gameName);
+    for(let i = 0; i < storageGame.length; i++)
+    {
+        if(storageGame[i].id === gameName)
+        {
+            gameIndex = i;
+            break;
+        }
+    }
 
     storageGame.splice(gameIndex, 1);
     localStorage.setItem("gameList", JSON.stringify(storageGame));
 }
 
-function refresh_render(event)
+function refresh_render()
 {
-    event.preventDefault();
     let gameList = localStorage.getItem("gameList");
     gameList = JSON.parse(gameList);
 
     if(gameList != null)
-    {
-        console.log(gameList);
         for(game of gameList)
-        {
             add_game(game);
-        }
-        
-    }
-    
 }
 
 
@@ -211,3 +206,6 @@ function filter(string)
     para.textContent = string;
     return para.innerHTML;
 }
+
+window.addEventListener("click", buttondealer);
+window.addEventListener("DOMContentLoaded", refresh_render);
