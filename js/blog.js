@@ -150,7 +150,7 @@ function updateGame(gameData, prevGameIdx)
     deleteBtn.id = `delete:${gameData.name}`;
 
     block.children[0].innerHTML = `${gameData.name}`;
-    block.children[1].innerHTML = `${gameData.Year}`;
+    block.children[1].innerHTML = `Published year: ${gameData.Year}`;
     block.children[2].innerHTML = `${gameData.summary}`;
 
     storageGame[prevGameIdx].id = gameData.name;
